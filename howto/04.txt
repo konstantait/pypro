@@ -1,0 +1,47 @@
+# howto: git, create new branch
+# -----------------------------
+
+~/pypro$ git checkout -b howto
+Switched to a new branch 'howto'
+
+~/pypro$ git status
+On branch howto
+nothing to commit, working tree clean
+
+~/pypro$ mkdir howto
+~/pypro$ touch howto/.gitkeep
+~/pypro$ git add howto/.gitkeep
+~/pypro$ git status
+On branch howto
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   howto/.gitkeep
+
+~/pypro$ git commit -m 'howto: step by step from console'
+[howto ba6eca8] howto: step by step from console
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 howto/.gitkeep
+
+~/pypro$ git push --set-upstream origin howto
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 337 bytes | 337.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'howto' on GitHub by visiting:
+remote:      https://github.com/konstantait/pypro/pull/new/howto
+remote:
+To github.com:konstantait/pypro.git
+ * [new branch]      howto -> howto
+Branch 'howto' set up to track remote branch 'howto' from 'origin'.
+
+~/pypro$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 632 bytes | 632.00 KiB/s, done.
+From github.com:konstantait/pypro
+   a58d7d1..a803efc  main -> origin/main
+Already up to date.
