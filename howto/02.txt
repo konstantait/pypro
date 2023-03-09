@@ -1,0 +1,32 @@
+howto: python, virtualenv, pycharm
+----------------------------------
+
+~$ python3 --version
+Python 3.10.6
+~$ sudo apt install python3-pip
+
+~$ pip --version
+pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)
+
+~$ sudo apt install python3-venv
+
+~$ mkdir pypro
+~$ python3 -m venv venv
+~$ ls -a pypro/venv
+.  ..  bin  include  lib  lib64  pyvenv.cfg
+~$ source pypro/venv/bin/activate
+(venv) ~$ python
+Python 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print('Hello, world!')
+Hello, world!
+>>> exit()
+(venv) ~$ deactivate
+
+~$ sudo snap install pycharm-community --classic
+~$ pycharm-community ~/pypro
+~$ ls -a pypro
+.  ..  .idea  venv
+~$ ls -a pypro/.idea
+.  ..  inspectionProfiles  misc.xml  modules.xml  pypro.iml  workspace.xml
+~$ rm -rf pypro
