@@ -11,7 +11,7 @@ pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)
 ~$ sudo apt install python3-venv
 
 ~$ mkdir pypro
-~$ python3 -m venv venv
+~$ python3 -m venv pypro/venv
 ~$ ls -a pypro/venv
 .  ..  bin  include  lib  lib64  pyvenv.cfg
 ~$ source pypro/venv/bin/activate
