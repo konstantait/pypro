@@ -1,0 +1,32 @@
+# howto: ubuntu hyper-v install, ssh keygen
+# -----------------------------------------
+
+# Windows Server 2019 Standart with Hyper-V
+# Ubuntu 22.04.2 LTS Minimal installation
+
+# Enable Screen Sharing Features through RDP on Ubuntu 22.04
+# Setting | Sharing -> Unlock
+# Setting | Sharing | Remote Desktop | Remote Desktop -> On
+# Setting | Sharing | Remote Desktop | Remote Control -> On
+# Remember authentication password, login first from RDP
+# Ubuntu Software | Explore | Search -> Extensions Manager -> Install
+# Extensions Manager | Browse | Search -> Allow Locked Remote Desktop -> Install
+
+~$ sed -i.bak 's/\\u@\\h//g' ~/.bashrc
+~$ source ~/.bashrc
+
+~$ sudo apt update
+~$ sudo apt -y upgrade
+
+~$ sudo apt-get install linux-image-extra-virtual
+~$ sudo sed -i.bak 's/quiet splash/quiet splash video=hyperv_fb:1440x900/' /etc/default/grub
+~$ sudo update-grub
+~$ reboot
+
+~$ mkdir -p ~/.ssh
+~$ ssh-keygen -t rsa -b 4096 -C "konstanta.it@gmail.com"
+~$ ls ~/.ssh/id_*
+~/.ssh/id_rsa  ~/.ssh/id_rsa.pub
+~$ cat ~/.ssh/id_rsa.pub
+
+# GitHub | Account | Setting | SSH and GPG keys -> Add new SSH key
