@@ -1,0 +1,52 @@
+# howto: git basic, main branch
+# -----------------------------
+
+~$ sudo apt install git
+~$ git --version
+git version 2.34.1
+
+~$ git clone git@github.com:konstantait/pypro.git
+Cloning into 'pypro'...
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+~$ cd pypro
+~/pypro$ git config --global user.name "John Doe"
+~/pypro$ git config --global user.email "konstanta.it@gmail.com"
+
+~/pypro$ echo -e '\n# JetBrains IDEs\n.idea/' >> .gitignore
+~/pypro$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+Changes not staged for commit:
+	modified:   .gitignore
+
+~/pypro$ git add .gitignore
+~/pypro$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+Changes to be committed:
+	modified:   .gitignore
+
+~/pypro$ git commit -m 'fix: excluded folder .idea from git'
+[main a58d7d1] fix: excluded folder .idea from git
+ 1 file changed, 3 insertions(+)
+
+~/pypro$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:konstantait/pypro.git
+   71eafad..a58d7d1  main -> main
